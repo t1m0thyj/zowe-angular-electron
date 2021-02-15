@@ -1,7 +1,7 @@
 <div class="container">
   <h1 class="title">
-    {{ 'PAGES.HOME.TITLE' | translate }}
+    <div *ngFor="let job of jobs">
+      {{ job.jobname }} - {{ job.jobid }}
+    </div>
   </h1>
-
-  <a routerLink="/detail">{{ 'PAGES.HOME.GO_TO_DETAIL' | translate }}</a>
 </div>

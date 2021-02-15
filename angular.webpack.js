@@ -4,6 +4,7 @@
 
 module.exports = (config, options) => {
     config.target = 'electron-renderer';
+    config.externals = Object.assign(config.externals || {}, { keytar: "commonjs keytar" });
 
 
     if (options.fileReplacements) {
