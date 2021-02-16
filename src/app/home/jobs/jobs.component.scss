@@ -1,0 +1,52 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  tr.example-detail-row {
+    height: 0;
+  }
+  
+  tr.view-job-row:not(.example-expanded-row):hover {
+    background: #777;
+  }
+  
+  tr.view-job-row:not(.example-expanded-row):active {
+    background: #efefef;
+  }
+  
+  .view-job-row td {
+    border-bottom-width: 0;
+  }
+  
+  .view-job-detail {
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .view-job-diagram {
+    min-width: 80px;
+    border: 2px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    margin: 8px 0;
+    height: 104px;
+  }
+  
+  .view-job-symbol {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: normal;
+  }
+  
+  .view-job-description {
+    padding: 16px;
+  }
+  
+  .view-job-description-attribution {
+    opacity: 0.5;
+  }

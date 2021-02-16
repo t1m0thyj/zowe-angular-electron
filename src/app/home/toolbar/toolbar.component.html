@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+
+    <button mat-button
+        [matMenuTriggerFor]="menu">{{currentProfile == null ? "loading..." : currentProfile.name}}</button>
+
+    <mat-menu #menu="matMenu">
+        <div *ngFor="let prof of profiles">
+            <button mat-menu-item (click)="change(prof)">{{prof.name}}</button>
+        </div>
+    </mat-menu>
+
+    <span fxFlex fxLayoutAlign="center"></span>
+
+    <mat-icon>refresh</mat-icon>
+
+</mat-toolbar>

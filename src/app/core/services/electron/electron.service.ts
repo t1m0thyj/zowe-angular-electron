@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 import { ipcRenderer, webFrame, remote } from 'electron';
 import * as childProcess from 'child_process';
 import * as fs from 'fs';
+import * as os from 'os';
+import * as path from 'path';
 
 @Injectable({
   providedIn: 'root'
@@ -15,22 +17,23 @@ export class ElectronService {
   remote: typeof remote;
   childProcess: typeof childProcess;
   fs: typeof fs;
+  os: typeof os;
+  path: typeof path;
 
-  get isElectron(): boolean {
-    return !!(window && window.process && window.process.type);
+  get isElectron() {
+    return window && window.process && window.process.type;
   }
 
   constructor() {
-    // Conditional imports
+
     if (this.isElectron) {
       this.ipcRenderer = window.require('electron').ipcRenderer;
       this.webFrame = window.require('electron').webFrame;
-
-      // If you wan to use remote object, pleanse set enableRemoteModule to true in main.ts
-      // this.remote = window.require('electron').remote;
-
+      this.remote = window.require('electron').remote;
       this.childProcess = window.require('child_process');
       this.fs = window.require('fs');
+      this.os = window.require('os');
+      this.path = window.require('path');
     }
   }
 }
