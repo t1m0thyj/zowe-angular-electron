@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IJob } from '@zowe/zos-jobs-for-zowe-sdk';
+import { IJob, IJobFile } from '@zowe/zos-jobs-for-zowe-sdk';
+import { JobService } from '../../core/services/jobs/job.service';
 
 @Component({
   selector: 'app-job-detail',
@@ -9,10 +10,20 @@ import { IJob } from '@zowe/zos-jobs-for-zowe-sdk';
 export class JobDetailComponent implements OnInit {
 
   @Input() job: IJob;
-  constructor() { }
+  files: IJobFile[];
+  constructor(private js: JobService) {
 
-  ngOnInit() {
-    console.log(this.job)
+  }
+
+  async ngOnInit() {
+    this.files = await this.js.getFiles(this.job);
+    console.log(this.job.jobname)
+    console.log(this.files)
+    // console.log(this.files.length)
+  }
+
+  test() {
+    // TODO
   }
 
 }

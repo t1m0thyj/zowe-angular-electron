@@ -26,7 +26,7 @@ export class JobsComponent implements AfterViewInit {
   dataSource = new MatTableDataSource<IJob>([]);
 
   columnsToDisplay = ['jobname', 'jobid', 'status', 'retcode']; // IJob column titles
-  columnTitles = ['Name', 'ID', 'Status', 'RC']; // IJob column titles
+  columnTitles = ['Name', 'ID', 'Status', 'Code']; // IJob column titles
 
   expandedJob: IJob | null;
 

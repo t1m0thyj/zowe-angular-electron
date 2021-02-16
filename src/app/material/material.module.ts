@@ -18,6 +18,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatListModule } from '@angular/material/list';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
@@ -30,6 +32,7 @@ import { FormsModule } from '@angular/forms';
     CdkTableModule,
     MatIconModule,
     MatTabsModule,
+    MatListModule,
     MatButtonModule,
     MatDividerModule,
     MatMenuModule,
@@ -42,6 +45,7 @@ import { FormsModule } from '@angular/forms';
     MatSortModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
+    MatCheckboxModule,
     FormsModule,
     FlexLayoutModule,
   ],
@@ -50,6 +54,7 @@ import { FormsModule } from '@angular/forms';
     CdkTableModule,
     MatIconModule,
     MatTabsModule,
+    MatListModule,
     MatButtonModule,
     MatDividerModule,
     MatMenuModule,
@@ -62,6 +67,7 @@ import { FormsModule } from '@angular/forms';
     MatSortModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
+    MatCheckboxModule,
     FormsModule,
     FlexLayoutModule,
   ]
