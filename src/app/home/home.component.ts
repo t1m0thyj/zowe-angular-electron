@@ -20,8 +20,8 @@ export class HomeComponent implements OnInit {
     // init file logger for imperative
     Logger.initLogger(LoggingConfigurer.configureLogger(".sample", { name: "sample" }));
 
-    // load default zosmf profile merged with base profile
-    const profile = await getDefaultProfile("zosmf", true);
+    // load default zosmf profile
+    const profile = await getDefaultProfile("zosmf");
 
     // convert profile to connection info object
     const connectionInfo: ISession = {
