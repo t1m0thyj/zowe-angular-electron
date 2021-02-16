@@ -17,16 +17,21 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router) { }
 
   async ngOnInit(): Promise<void> {
-    // init dummy logger for imperative
+    // init file logger for imperative
     Logger.initLogger(LoggingConfigurer.configureLogger(".sample", { name: "sample" }));
 
-    // load default zosmf profile
+    // load default zosmf profile merged with base profile
     const profile = await getDefaultProfile("zosmf", true);
 
     // convert profile to connection info object
-    const connectionInfo = profile as ISession;
-    connectionInfo.hostname = profile.host;
-    connectionInfo.type = (profile.user != null && profile.password != null) ? "basic" : "token";
+    const connectionInfo: ISession = {
+      hostname: profile.host,
+      port: profile.port,
+      type: "basic",
+      user: profile.user,
+      password: profile.password,
+      rejectUnauthorized: profile.rejectUnauthorized
+    };
 
     // create a session & get jobs
     const session = new Session(connectionInfo);
