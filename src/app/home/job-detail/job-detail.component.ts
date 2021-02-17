@@ -11,6 +11,7 @@ export class JobDetailComponent implements OnInit {
 
   @Input() job: IJob;
   files: IJobFile[];
+  prettyBytes = require("pretty-bytes");
   constructor(private js: JobService, private es: ElectronService) {
 
   }
