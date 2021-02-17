@@ -11,10 +11,15 @@ import { IndeterminateLoadingComponent } from './indeterminate-loading/indetermi
 import { JobsComponent } from './jobs/jobs.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { JobDetailComponent } from './job-detail/job-detail.component';
-import { JobFileComponent } from './job-file/job-file.component';
 
 @NgModule({
-  declarations: [HomeComponent, ToolbarComponent, IndeterminateLoadingComponent, JobsComponent, ProfilesComponent, JobDetailComponent, JobFileComponent],
+  declarations: [HomeComponent,
+    ToolbarComponent,
+    IndeterminateLoadingComponent,
+    JobsComponent,
+    ProfilesComponent,
+    JobDetailComponent,
+  ],
   imports: [CommonModule,
     SharedModule,
     HomeRoutingModule,

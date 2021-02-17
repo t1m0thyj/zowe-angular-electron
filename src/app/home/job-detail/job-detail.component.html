@@ -1,6 +1,6 @@
 <mat-list>
     <mat-list-item *ngFor="let file of files">
-        <mat-icon mat-list-icon (click)="test()">note</mat-icon>
+        <mat-icon mat-list-icon (click)="open(file)">note</mat-icon>
         <h4 mat-line>{{file.ddname}}</h4>
         <p mat-line> {{file["record-count"]}} lines</p>
     </mat-list-item>

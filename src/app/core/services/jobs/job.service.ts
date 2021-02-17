@@ -36,6 +36,10 @@ export class JobService {
 
   }
 
+  public async downloadFile(file: IJobFile): Promise<string> {
+    return await this.getJobsApi.getSpoolContent(this.ss.selectedSession.value, file);
+  }
+
   public getFiles(job: IJob) {
     return this.jobFiles.get(job);
   }

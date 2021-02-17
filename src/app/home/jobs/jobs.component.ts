@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { JobService } from '../../core/services/jobs/job.service';
+import { JobService } from '../../core/services';
 import { IJob } from '@zowe/zos-jobs-for-zowe-sdk';
 
 

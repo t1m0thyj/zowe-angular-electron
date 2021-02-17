@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from '../../core/services/profiles/profile.service';
+import { ProfileService } from '../../core/services';
 import { IProfileLoaded } from '@zowe/imperative';
 
 @Component({
@@ -22,7 +22,7 @@ export class ToolbarComponent implements OnInit {
     });
 
     this.ps.allProfiles.subscribe(async (profiles) => {
-      this.profiles = profiles.filter((prof) => prof.name !== this.currentProfile.name); // filter out the default
+      this.profiles = profiles;
     });
 
   }
@@ -30,6 +30,10 @@ export class ToolbarComponent implements OnInit {
   change(profile: IProfileLoaded) {
     console.log(`Changed default profile to ${profile.name}`);
     this.ps.current = profile;
+  }
+
+  refresh() {
+    // TODO
   }
 
 }
